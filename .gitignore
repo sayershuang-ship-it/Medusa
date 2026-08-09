@@ -4,3 +4,4 @@ Cargo.lock
 .DS_Store
 report.html
 .medusa_cache.json
+**/__pycache__/
