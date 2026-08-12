@@ -87,7 +87,7 @@ struct FusionMatch {
     match_type: String,
 }
 
-#[derive(Debug, Clone, serde::Serialize, serde::Deserialize, Default)]
+#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
 struct MedusaConfig {
     #[serde(default = "default_complexity_weight")]
     complexity_weight: f64,
@@ -97,6 +97,17 @@ struct MedusaConfig {
     keyword_weight: f64,
     #[serde(default)]
     tier_thresholds: HashMap<String, f64>,
+}
+
+impl Default for MedusaConfig {
+    fn default() -> Self {
+        MedusaConfig {
+            complexity_weight: default_complexity_weight(),
+            value_weight: default_value_weight(),
+            keyword_weight: default_keyword_weight(),
+            tier_thresholds: HashMap::new(),
+        }
+    }
 }
 
 fn default_complexity_weight() -> f64 { 0.6 }
