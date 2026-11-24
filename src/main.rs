@@ -165,22 +165,11 @@ impl Default for DreamingConfig {
 impl Default for MedusaConfig {
     fn default() -> Self {
         MedusaConfig {
-            complexity_weight: 0.6,
-            value_weight: 0.3,
-            keyword_weight: 0.1,
-            tier_thresholds: HashMap::new(),
-            dreaming: DreamingConfig::default(),
-        }
-    }
-}
-
-impl Default for MedusaConfig {
-    fn default() -> Self {
-        MedusaConfig {
             complexity_weight: default_complexity_weight(),
             value_weight: default_value_weight(),
             keyword_weight: default_keyword_weight(),
             tier_thresholds: HashMap::new(),
+            dreaming: DreamingConfig::default(),
         }
     }
 }
